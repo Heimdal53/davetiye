@@ -43,28 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCountdown, 1000);
 
     // --- 2. MUSIC ---
-    const musicBtn = document.getElementById('music-toggle');
     const audio = document.getElementById('bg-music');
     let musicStarted = false;
-
-    function toggleMusic() {
-        if (audio.paused) {
-            audio.play().then(() => {
-                document.body.classList.add('music-playing');
-                musicStarted = true;
-            }).catch(() => {});
-        } else {
-            audio.pause();
-            document.body.classList.remove('music-playing');
-        }
-    }
-    if (musicBtn) musicBtn.addEventListener('click', toggleMusic);
 
     // Auto-play on first interaction
     function autoPlayOnce() {
         if (!musicStarted) {
             audio.play().then(() => {
-                document.body.classList.add('music-playing');
                 musicStarted = true;
             }).catch(() => {});
         }
@@ -162,7 +147,19 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     function renderWishes() {
-        const wishes = JSON.parse(localStorage.getItem('guestbook_entries') || '[]');
+        let wishes = JSON.parse(localStorage.getItem('guestbook_entries') || '[]');
+        
+        // Clean up any test/spam messages like "q3r" or "qrq3"
+        const filtered = wishes.filter(w => {
+            const nameClean = w.name ? w.name.trim().toLowerCase() : '';
+            const msgClean = w.message ? w.message.trim().toLowerCase() : '';
+            return nameClean !== 'q3r' && msgClean !== 'qrq3';
+        });
+        if (filtered.length !== wishes.length) {
+            wishes = filtered;
+            localStorage.setItem('guestbook_entries', JSON.stringify(wishes));
+        }
+
         if (!wishesWall) return;
         const otherWishes = wishes.length === 0
             ? '<p style="text-align:center;color:var(--color-muted);font-size:0.8rem;margin-top:16px;">Diğer davetlilerin mesajları burada görünecektir.</p>'
