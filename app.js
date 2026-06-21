@@ -44,20 +44,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. MUSIC ---
     const audio = document.getElementById('bg-music');
-    let musicStarted = false;
 
-    // Auto-play on first interaction
-    function autoPlayOnce() {
-        if (!musicStarted) {
-            audio.play().then(() => {
-                musicStarted = true;
-            }).catch(() => {});
-        }
-        document.removeEventListener('click', autoPlayOnce);
-        document.removeEventListener('touchstart', autoPlayOnce);
+    function playAudio() {
+        audio.play().then(() => {
+            removeInteractionListeners();
+        }).catch((err) => {
+            console.log("Playback failed, waiting for user gesture:", err);
+        });
     }
-    document.addEventListener('click', autoPlayOnce);
-    document.addEventListener('touchstart', autoPlayOnce);
+
+    function removeInteractionListeners() {
+        ['click', 'touchstart', 'touchend', 'pointerdown', 'mousedown'].forEach(event => {
+            document.removeEventListener(event, playAudio);
+        });
+    }
+
+    // Try to play immediately (some browsers/configurations allow it)
+    audio.play().then(() => {
+        // Success
+    }).catch(() => {
+        // Autoplay blocked, wait for user gesture
+        ['click', 'touchstart', 'touchend', 'pointerdown', 'mousedown'].forEach(event => {
+            document.addEventListener(event, playAudio);
+        });
+    });
 
     // --- 3. SCROLL REVEAL ---
     const scrollEls = document.querySelectorAll('.fade-in-scroll');
