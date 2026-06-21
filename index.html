@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gülçin & Seyit Düğün Davetiyesi</title>
+    <meta name="description" content="Gülçin & Seyit çiftinin mutlu gününe davetlisiniz.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Müzik Butonu -->
+    <button id="music-toggle" class="music-btn" aria-label="Müzik">
+        <div class="music-visualizer" id="music-visualizer">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+    </button>
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Hero -->
+    <header class="hero" id="home">
+        <div class="hero-bg" style="background-image: url('images/hero_bg.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+            <p class="hero-pretext fade-up">Evleniyoruz</p>
+            <h1 class="hero-names fade-up delay-1">Gülçin<span class="amp">&</span>Seyit</h1>
+            <div class="hero-line fade-up delay-2"></div>
+            <div class="hero-families fade-up delay-3">
+                <div class="family-side">
+                    <span class="parent-names">Ümran & Aydın</span>
+                    <span class="family-surname">ORUÇOĞLU</span>
+                </div>
+                <svg class="leaf" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C11 5 8 7 5 8c3 1 5 3 6 6 1-3 3-5 6-6-3-1-5-3-6-6z" fill="currentColor"/></svg>
+                <div class="family-side">
+                    <span class="parent-names">Aynur & Necat</span>
+                    <span class="family-surname">KESİMAL</span>
+                </div>
+            </div>
+            <a href="#countdown" class="hero-scroll fade-up delay-4">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sayaç -->
+    <section class="section" id="countdown">
+        <div class="container">
+            <p class="section-label fade-in-scroll" id="countdown-title">İstanbul Kına-Düğün</p>
+            <div class="countdown-row fade-in-scroll">
+                <div class="cd-item"><span class="cd-num" id="days">00</span><span class="cd-lbl">Gün</span></div>
+                <div class="cd-sep">:</div>
+                <div class="cd-item"><span class="cd-num" id="hours">00</span><span class="cd-lbl">Saat</span></div>
+                <div class="cd-sep">:</div>
+                <div class="cd-item"><span class="cd-num" id="minutes">00</span><span class="cd-lbl">Dakika</span></div>
+                <div class="cd-sep">:</div>
+                <div class="cd-item"><span class="cd-num" id="seconds">00</span><span class="cd-lbl">Saniye</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Davet Metni -->
+    <section class="section section-dark" id="quote">
+        <div class="container narrow">
+            <div class="quote-block fade-in-scroll">
+                <p class="quote-text">"Sevgi dolu birlikteliğimizi sonsuzluğa taşıdığımız bu günde sizleri de aramızda görmekten onur duyarız."</p>
+                <span class="quote-heart">♥</span>
+                <p class="quote-sig">Gülçin & Seyit</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Etkinlikler -->
+    <section class="section" id="program">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">Program</h2>
+            <div class="events-row">
+                <!-- İstanbul -->
+                <article class="event-card fade-in-scroll">
+                    <div class="event-badge">İstanbul</div>
+                    <h3>Kına & Düğün</h3>
+                    <time class="event-date">28 Haziran 2026 • Pazar</time>
+                    <p class="event-time">13:00 – 17:00</p>
+                    <p class="event-venue">Villa Rose</p>
+                    <p class="event-addr">Merkez Mah. Piri Reis Cad, Gürpınar, Yaban Sk. No 3<br>Beylikdüzü / İstanbul</p>
+                    <div class="event-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Villa+Rose+Beylikd%C3%BCz%C3%BC+%C4%B0stanbul" target="_blank" class="btn btn-outline-light">Yol Tarifi</a>
+                        <a href="#" class="btn btn-accent calendar-btn" data-title="Gülçin & Seyit İstanbul Kına-Düğün" data-desc="İstanbul Kına ve Düğün Merasimi" data-location="Villa Rose Beylikdüzü, İstanbul" data-start="2026-06-28T13:00:00" data-end="2026-06-28T17:00:00">Takvime Ekle</a>
+                    </div>
+                </article>
+                <!-- Rize -->
+                <article class="event-card fade-in-scroll">
+                    <div class="event-badge">Rize</div>
+                    <h3>Düğün Daveti</h3>
+                    <time class="event-date">08 Temmuz 2026 • Çarşamba</time>
+                    <p class="event-time">19:00 – 00:00</p>
+                    <p class="event-venue">Park Şana</p>
+                    <p class="event-addr">Merkez Mah. Sahil Cd. No: 12<br>Ardeşen / Rize</p>
+                    <div class="event-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Park+%C5%9Eana+Arde%C5%9Fen+Rize" target="_blank" class="btn btn-outline-light">Yol Tarifi</a>
+                        <a href="#" class="btn btn-accent calendar-btn" data-title="Gülçin & Seyit Rize Düğün Daveti" data-desc="Rize Düğün Merasimi" data-location="Park Şana Ardeşen, Rize" data-start="2026-07-08T19:00:00" data-end="2026-07-09T00:00:00">Takvime Ekle</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hikayemiz -->
+    <section class="section section-dark" id="timeline">
+        <div class="container narrow">
+            <h2 class="section-title fade-in-scroll">Hikayemiz</h2>
+            <div class="story-list">
+                <div class="story-item fade-in-scroll"><span class="story-year">26.10.2024</span><h4>İlk Karşılaşma</h4><p>Kaderin yollarımızı ilk kez kesiştirdiği o güzel gün.</p></div>
+                <div class="story-item fade-in-scroll"><span class="story-year">02.11.2025</span><h4>Söz & Nişan</h4><p>Söz ve nişan merasimimizi bir arada gerçekleştirdiğimiz o özel gün.</p></div>
+                <div class="story-item fade-in-scroll"><span class="story-year">08.07.2026</span><h4>Düğün</h4><p>Sevgimizi taçlandırıp mutluluğumuzu paylaşıyoruz.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">Anılarımız</h2>
+            <div class="gallery-grid gallery-grid-2">
+                <div class="gallery-item fade-in-scroll"><img src="images/gallery1.jpg" alt="Gülçin & Seyit" class="gallery-img"></div>
+                <div class="gallery-item fade-in-scroll"><img src="images/gallery2.jpg" alt="Gülçin & Seyit" class="gallery-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anı Defteri -->
+    <section class="section section-dark" id="guestbook-section">
+        <div class="container narrow">
+            <div class="card-block fade-in-scroll" id="guestbook">
+                <h2 class="card-block-title">Anı Defteri</h2>
+                <form id="guestbook-form" class="form-stack">
+                    <div class="field"><input type="text" id="guest-name" required placeholder=" "><label for="guest-name">Ad Soyad *</label></div>
+                    <div class="field"><textarea id="guest-message" rows="2" required placeholder=" "></textarea><label for="guest-message">Mesajınız *</label></div>
+                    <button type="submit" class="btn btn-accent btn-full">Deftere Yaz</button>
+                </form>
+                <div class="wishes-wall" id="wishes-wall"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-mono">G & S</p>
+        <p class="footer-note">Bizimle olduğunuz için teşekkür ederiz.</p>
+        <p class="footer-designer">Designed by Eren Kesimal</p>
+        <button id="admin-trigger" class="admin-trigger" aria-label="Yönetici Girişi">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </button>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox-modal" class="lightbox"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt=""><div id="lightbox-caption" class="lightbox-cap"></div></div>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-close admin-close">&times;</span>
+            <h2>Yönetici Paneli</h2>
+            <div id="admin-auth-section">
+                <p>Şifreyi girin:</p>
+                <div class="field"><input type="password" id="admin-password" required placeholder=" "><label for="admin-password">Şifre</label></div>
+                <button id="admin-login-btn" class="btn btn-accent" style="margin-top:12px;">Giriş</button>
+                <p id="admin-auth-error" class="error-text hidden">Hatalı şifre.</p>
+            </div>
+            <div id="admin-dashboard-section" class="hidden">
+                <div class="tab-row">
+                    <button class="tab-btn active" data-tab="tab-rsvp">LCV</button>
+                    <button class="tab-btn" data-tab="tab-guestbook">Mesajlar</button>
+                </div>
+                <div id="tab-rsvp" class="tab-content active">
+                    <div class="admin-bar"><h3>Katılım Listesi</h3><button id="download-rsvp-csv" class="btn btn-outline-light btn-sm">CSV İndir</button></div>
+                    <div class="table-wrap"><table class="admin-table"><thead><tr><th>Tarih</th><th>Ad Soyad</th><th>İstanbul</th><th>Rize</th><th>Kişi</th><th>Not</th><th></th></tr></thead><tbody id="admin-rsvp-list"></tbody></table></div>
+                </div>
+                <div id="tab-guestbook" class="tab-content">
+                    <div class="admin-bar"><h3>Mesaj Listesi</h3></div>
+                    <div class="table-wrap"><table class="admin-table"><thead><tr><th>Tarih</th><th>Ad Soyad</th><th>Mesaj</th><th></th></tr></thead><tbody id="admin-guestbook-list"></tbody></table></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
